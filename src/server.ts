@@ -5,6 +5,10 @@ const server = fastify()
 
 server.register(createUser)
 
+server.get('/', (req, res) => {
+    res.send('Hello World!')
+})
+
 server.listen({port: 3000 }, (err, address) => {
     if (err) {
         console.error("Error starting server:", err)
